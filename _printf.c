@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdarg.h>
 /**
 * _printf - printf function
 * @format: the formated string
@@ -8,6 +8,7 @@
 
 int _printf(const char *format, ...)
 {
+	int i = 0;
 	int sum = 0;
 	va_list vals;
 	char *p, *start;
@@ -35,15 +36,16 @@ int _printf(const char *format, ...)
 		}
 		p = get_width(p, &params, vals);
 		p = get_precision(p, &params, vals);
-		if (get_modifier(p, params))
+		if (get_modifier(p, &params))
 			p++;
 		if (!get_specifier(p))
 			sum += print_from_to(start, p, params.l_modifier ||
-			params.h_modofier ? p - 1 : 0);
+			params.h_modifier ? p - 1 : 0);
 		else
 			sum += get_print_func(p, vals, &params);
 	}
 	_putchar(BUF_FLUSH);
-	va_end vals;
+	
+	va_end (vals);
 	return(sum);
 }
