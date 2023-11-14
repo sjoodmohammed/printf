@@ -7,10 +7,10 @@
 */
 int _puts(char *str)
 {
-char *a = str;
+char * a = str;
 while(*str)
 _putchar(*str++);
-return (str - a);
+return (str a);
 }
 
 /**
@@ -21,8 +21,8 @@ return (str - a);
 int _putchar(int c)
 {
 static int i;
-static char buf OUTPUT_BUF_SIZE
-if (c == BUF_FLUSH || i >=
+static char buf(OUTPUT_BUF_SIZE)
+if (c == BUF-FLUSH || i >=
 OUTPUT_BUF_SIZE)
 {
 write (1, buf, i);
