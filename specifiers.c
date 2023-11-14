@@ -9,7 +9,7 @@
 
 int (*get_specifier(char *s)) (va_list vals, params_t *params)
 {
-specifier_t  specifiers [] = {
+specifier_t  specifiers[] = {
 {"c", print_char},
 {"d", print_int},
 {"i", print_int},
@@ -26,15 +26,15 @@ specifier_t  specifiers [] = {
 {NULL,  NULL},
 } ;
 int i = 0 ;
-while (specifiers[i]. specifier)
+while (specifiers[i].specifier)
 {
 if (*s == specifiers[i].specifier[0])
 {
-return (specifiers[i].f) ;
+return (specifiers[i].f);
 }
 i++;
 }
-return (NULL) ;
+return (NULL);
 }
 /**
 * get_flag - function to get the flag
@@ -89,7 +89,7 @@ return (i);
 * @s: the string
 * Return: the number of bytes .
 */
-int get_width(char *s, params_t *params, va_list vals)
+char *get_width(char *s, params_t *params, va_list vals)
 {
 int d = 0;
 if (*s == '*')
@@ -103,5 +103,5 @@ while (_isdigit(*s))
     d = d * 10 + (*s++ - '0');
 }
 params -> width = d;
-return (d);
+return (s);
 }

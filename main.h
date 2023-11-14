@@ -54,7 +54,7 @@ int print_unsigned(va_list vals, params_t *params) ;
 int print_address(va_list vals, params_t *params) ;
 
 /*specifiers.c*/
-int (get_specifier(char *s)) (va_list vals, params_t *params);
+int (*get_specifier(char *s)) (va_list vals, params_t *params);
 int get_print_func(char *s, va_list vals, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifier(char *s, params_t *params);
