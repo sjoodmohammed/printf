@@ -5,7 +5,7 @@
  * @vals: the list
  * @Return: void
  */
-void init_params(params_t, va_list vals)
+void init_params(params_t *params, va_list vals)
 {
 	params -> unsign = 0;
 	params -> plus_flag = 0;

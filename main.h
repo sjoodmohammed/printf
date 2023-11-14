@@ -12,7 +12,7 @@
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH - 1
 
-#define PARAMS_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 #define CONVERT_LOWERCASE 1
 #define CONVERT_UNSIGNED 2
 
@@ -35,7 +35,7 @@ unsigned int width ;
 unsigned int precision ;
 unsigned int h_modifier ;
 unsigned int l_modifier ;
-} params_t ;
+} params_t;
 
 typedef struct specifier
 {
@@ -44,7 +44,7 @@ int (*f) (va_list, params_t *) ;
 } specifier_t ;
 
 /*_puts. C*/
-int_puts(char *str) ;
+int _puts(char *str) ;
 int _putchar(int c) ;
 
 /*number.c*/
@@ -52,7 +52,7 @@ char *convert(long int num, int base, int flags, params_t *params) ;
 int print_unsigned(va_list vals, params_t *params) ;
 int print_address(va_list vals, params_t *params) ;
 /*specifiers.c*/
-int (get_specifier(char *s) (va_list vals, params_t *params);
+int (*get_specifier(char *s)) (va_list vals, params_t *params);
 int get_print_func(char *s, va_list vals, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifier(char *s, params_t *params);
@@ -60,7 +60,7 @@ char *get_width(char *s, params_t *params, va_list vals);
 
 /* convert number.c*/
 int print_hex(va_list vals, params_t *params);
-int print_HEX(va_list vals, params_t *params);
+int prOOBint_HEX(va_list vals, params_t *params);
 int print_binary(va_list vals, params_t *params);
 int print_octal(va_list vals, params_t *params);
 
@@ -75,6 +75,7 @@ int print_number (char *str, params_t *params) ;
 int print_number_right_shift (char *str, params_t *params) ;
 int print_number_left_shift (char *str, params_t *params) ;
 /*params.c*/
+
 void init_params(params_t *params, va_list vals) ;
 /*string_fields.c*/
 char * get_percision(char *p, params_t *params, va_list vals);
