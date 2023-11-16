@@ -37,6 +37,22 @@ i++;
 return (NULL);
 }
 /**
+* get_print_func - function to get the format
+* @s: the format str
+* @vals: the argument pointer
+* @params: the parameter struct
+* Return: the number of bytes .
+*/
+
+int get_print_func(char *s, va_list vals, params_t *params)
+{
+	int (*f)(va_list, params_t *) = get_specifier(s);
+
+	if (f)
+		return (f(vals, params));
+	return (0);
+}
+/**
 * get_flag - function to get the flag
 * @params: the parameter
 * Return: the number of bytes.
