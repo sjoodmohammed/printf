@@ -16,7 +16,10 @@ void init_params(params_t *params, va_list vals)
 	params -> width = 0;
 	params -> precision = UINT_MAX;
         params -> h_modifier = 0;
+<<<<<<< HEAD
 	params ->h_modifier = 0;
+=======
+	params -> l_modifier = 0;
+>>>>>>> 50e9212a39f0611d49ae065716ce0c69948bde36
 	(void) vals;
 }
-	
