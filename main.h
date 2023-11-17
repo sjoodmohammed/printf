@@ -7,10 +7,10 @@
 #include <unistd.h>
 #include <limits.h>
 
-#define NULL_STRING "(null)"
-
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
+
+#define NULL_STRING "(null)"
 
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
@@ -29,7 +29,7 @@ unsigned int width ;
 unsigned int precision ;
 unsigned int h_modifier ;
 unsigned int l_modifier ;
-} params_t ;
+}params_t;
 
 typedef struct specifier
 {

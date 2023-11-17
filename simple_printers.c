@@ -14,8 +14,8 @@ int print_rot13(va_list vals, params_t *params)
 	i = 0;
 	while(a[i])
 	{
-		if ((a[i]>= 'A' && a[i] <= 'Z')
-				|| ((a[i]>= 'z')
+		if (a[i] >= 'A' && a[i] <= 'Z')
+				||(a[i] >= 'z')
 					{
 					else
 					cont += _putchar(a[i]);
@@ -32,13 +32,13 @@ int print_rot13(va_list vals, params_t *params)
 					int print_rev(va_list vals, params_t params)
 					{
 					int len, sum =0;
-					char *str= va_arg(vals, char);
+					char *str = va_arg(vals, char);
 					(void)params;
 					if (str)
 					{
 						for (len = 0; *str, str++)
 							len++;
-						str__;
+						str--;
 						for (;len--, str--)
 							sum += _putchar(*str);
 					}
@@ -50,13 +50,13 @@ int print_rot13(va_list vals, params_t *params)
 					 * @except: except: address
 					 * Return: the number of bytes
 					 */
-					int print_from__to(char *start, char *stop,char *except)
+					int print_from_to(char *start, char *stop,char *except)
 					{
 						int sum = 0;
 						while (start <= stop)
 						{
-							if (start !=nexcept)
-								sum += _putch(*start);
+							if (start != except)
+								sum += _putchar(*start);
 							start++;
 						}
 						return (sum);
