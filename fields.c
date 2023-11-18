@@ -7,6 +7,8 @@
  * Return: new pointer
  */
 char *get_precision(char *p, params_t *params, va_list vals)
+
+
 {
 	int d = 0;
 	if(*p != '.')
@@ -20,7 +22,7 @@ char *get_precision(char *p, params_t *params, va_list vals)
 	else
 	{
 		while (_isdigit(*p))
-			d = d * 10  + (*p++ _ '0');
+			d = d * 10  + (*p++ - '0');
 	}
 	params->precision = d;
 	return (p);

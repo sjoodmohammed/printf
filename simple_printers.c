@@ -12,10 +12,10 @@ int print_rot13(va_list vals, params_t *params)
 	char arr[] = "NOPQRSTUVWXYZABCDEFGnopqrstuvwxyzabcdefghijklm";
 	(void)params;
 	i = 0;
-	while(a[i])
+	while (a[i] != '\0')
 	{
 		if (a[i] >= 'A' && a[i] <= 'Z')
-				||(a[i] >= 'z')
+				|| (a[i] >= 'z')
 					{
 					else
 					cont += _putchar(a[i]);
@@ -36,10 +36,10 @@ int print_rot13(va_list vals, params_t *params)
 					(void)params;
 					if (str)
 					{
-						for (len = 0; *str, str++)
+						for (len = 0; *str, str++;)
 							len++;
 						str--;
-						for (;len--, str--)
+						for (len--, str--; )
 							sum += _putchar(*str);
 					}
 					return (sum);
